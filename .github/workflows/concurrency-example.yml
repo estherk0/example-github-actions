@@ -1,0 +1,18 @@
+name: Concurrency example
+
+on:
+  workflow_dispatch:
+
+concurrency: 
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    name: Wait
+    steps:
+    - name: Sleep for 30 seconds
+      uses: whatnick/wait-action@master
+      with:
+        time: '30s'
