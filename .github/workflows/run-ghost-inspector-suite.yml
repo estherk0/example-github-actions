@@ -1,0 +1,15 @@
+name: Ghost Inspector
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    name: GI
+    steps:
+    - name: Run ghost inspector
+      uses: DATADEER/run-ghost-inspector-suite-action@v1.2
+      with:
+        suiteID: "628714d9a0299821fc1c83ae" # don't import from secrets. needs to visible in logs
+        GHOST_INSPECTOR_API_KEY: ${{ secrets.GHOST_INSPECTOR_API_KEY }}
