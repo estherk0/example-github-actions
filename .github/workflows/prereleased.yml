@@ -10,6 +10,6 @@ jobs:
     name: nothing
     steps:
     - name: Sleep for 30 seconds
-      uses: bash
+      shell: bash
       run: |
         echo "prereleased"
