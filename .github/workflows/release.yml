@@ -1,0 +1,15 @@
+name: Ghost Inspector
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    name: nothing
+    steps:
+    - name: Sleep for 30 seconds
+      uses: bash
+      run: |
+        echo "released"
