@@ -9,6 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     name: nothing
     steps:
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@v1.0.3
+      with:
+        version: 2     # default
+        arch: amd64    # allowed values: amd64, arm64
+    - run: aws --version
+      shell: bash
     - name: Sleep for 30 seconds
       shell: bash
       run: |
